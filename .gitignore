@@ -1,0 +1,14 @@
+# Скрытые файлы и приватные ключи
+.env
+
+# Данные и результаты
+video_data/
+video_db.json
+*.ndjson
+*.csv
+*.log
+
+# Кэш и системные файлы
+__pycache__/
+*.pyc
+.DS_Store
