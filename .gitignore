@@ -1,14 +1,19 @@
-# Скрытые файлы и приватные ключи
+# Секреты
 .env
 
-# Данные и результаты
+# Большие файлы и данные
 video_data/
+video_data.zip
 video_db.json
-*.ndjson
-*.csv
-*.log
+HighLoadChannel.json
+DevOops_conf.json
 
-# Кэш и системные файлы
+# Логи и экспорт
+*.log
+*.csv
+*.ndjson
+
+# Системное
 __pycache__/
 *.pyc
 .DS_Store
