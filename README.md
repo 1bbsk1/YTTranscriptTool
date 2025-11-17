@@ -12,9 +12,9 @@ A tool for bulk downloading auto-generated subtitles (ASR) from YouTube — incl
 
 ## 📦 Structure
 
-- `fetch_subs.py` — fetches and parses subtitles for a single video
-- `batch_fetch.py` — loops through a list of videos in `video_db.json`
-- `export_combined_json.py` — combines parsed data into exportable JSON by channel
+- Primary (TypeScript): `src/cli/fetchSubs.ts`, `src/cli/batchFetch.ts`, `src/cli/exportCombined.ts`, `src/flows/fetchSingle.ts`, `src/clients/youtube.ts`.
+- Tests & fixtures: `tests/` (unit + e2e), Python baselines under `tests/fixtures/python_baseline/`.
+- Legacy Python (kept for reference): see `legacy/python/README.md` for the original scripts.
 
 ## 🛠 Requirements (TypeScript/Node stack)
 
@@ -43,6 +43,8 @@ MAX_DELAY=3.5
 LOG_LEVEL=info
 ```
 
+> Note: if your shell sets `LANG`, it can override the default language; pass `lang` explicitly to the CLI or set `LANG=ru`/desired value.
+
 ## ▶️ Usage (TS CLI)
 
 Fetch a single video:
@@ -70,6 +72,10 @@ npm run fetch -- --help
 npm run batch -- --help
 npm run export -- --help
 ```
+
+## 🐍 Legacy Python
+
+The original Python scripts are preserved in `legacy/python/` with their own README. Use only if you need parity with the old flow; the TS CLIs above are the primary path.
 
 ## 🧰 Development
 
