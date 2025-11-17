@@ -16,7 +16,13 @@ A tool for bulk downloading auto-generated subtitles (ASR) from YouTube — incl
 - `batch_fetch.py` — loops through a list of videos in `video_db.json`
 - `export_combined_json.py` — combines parsed data into exportable JSON by channel
 
-## 🛠 Requirements
+## 🛠 Requirements (TypeScript/Node stack)
+
+```bash
+npm install
+```
+
+Optional: Python virtualenv only if you still need the legacy scripts:
 
 ```bash
 python3 -m venv .venv
@@ -24,48 +30,54 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-> Keep using the `python` inside `.venv` in your terminal session (reactivate with `source .venv/bin/activate` if you open a new shell).
-> If you already had a `venv/` folder that was created elsewhere, remove it and recreate the env as shown above so `python` is available.
-
 ## ⚙️ .env Example
 
 Create a `.env` file in the project root with the following content:
 
 ```env
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 API_KEYS=your_api_key1,your_api_key2
 USER_AGENTS=agent1,agent2
 LANG=ru
 MIN_DELAY=1.5
 MAX_DELAY=3.5
+LOG_LEVEL=info
 ```
 
-## ▶️ Usage
+## ▶️ Usage (TS CLI)
 
-Fetch a single video (manually):
+Fetch a single video:
 
 ```bash
-python fetch_subs.py VIDEO_ID ru CHANNEL_NAME
+npm run fetch -- VIDEO_ID [lang] [channel]
 ```
 
 Process the full video list from `video_db.json`:
 
 ```bash
-python batch_fetch.py
+npm run batch
 ```
 
 Export combined JSON files by channel:
 
 ```bash
-python export_combined_json.py
+npm run export [channels...]
+```
+
+Help flags:
+
+```bash
+npm run fetch -- --help
+npm run batch -- --help
+npm run export -- --help
 ```
 
 ## 🧰 Development
 
-Run static analysis (Ruff, aiogram-based bot code uses this environment):
+Type check / lint and tests:
 
 ```bash
-make lint
+npm run lint
+npm test
 ```
 
 ## 📁 Output Format
@@ -83,6 +95,11 @@ Each resulting JSON contains:
   "text": "Full transcript text..."
 }
 ```
+
+## 🧪 Testing & baseline
+
+- Unit tests cover captions parsing, YouTube client (mocked fetch), CLI arg parsing.
+- E2E regression uses Python baseline fixture `tests/fixtures/python_baseline/video_data/DevOops_conf/-kq832Othh4.json` to ensure TS output matches.
 
 ## 📄 License
 

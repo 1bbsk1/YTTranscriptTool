@@ -1,0 +1,18 @@
+{
+  "captions": {
+    "playerCaptionsTracklistRenderer": {
+      "captionTracks": [
+        {
+          "baseUrl": "https://example.com/captions",
+          "languageCode": "ru",
+          "kind": "asr"
+        },
+        {
+          "baseUrl": "https://example.com/captions-en",
+          "languageCode": "en",
+          "kind": "asr"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "videoDetails": {
+    "title": "No captions",
+    "viewCount": "5",
+    "lengthSeconds": "10"
+  },
+  "captions": {
+    "playerCaptionsTracklistRenderer": {
+      "captionTracks": [
+        {
+          "baseUrl": "https://example.com/other",
+          "languageCode": "en",
+          "kind": "asr"
+        }
+      ]
+    }
+  }
+}

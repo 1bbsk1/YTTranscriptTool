@@ -1,0 +1,28 @@
+{
+  "name": "yt-transcript-tool",
+  "version": "0.1.0",
+  "private": true,
+  "description": "YouTube transcript fetcher and summarizer (TypeScript port).",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc --noEmit -p tsconfig.json",
+    "test": "tsx tests/run-tests.ts",
+    "dev": "tsx src/index.ts",
+    "fetch": "tsx src/cli/fetchSubs.ts",
+    "batch": "tsx src/cli/batchFetch.ts",
+    "export": "tsx src/cli/exportCombined.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fast-xml-parser": "^5.3.2",
+    "he": "^1.2.0",
+    "undici": "^6.13.0"
+  },
+  "devDependencies": {
+    "@types/he": "^1.2.3",
+    "@types/node": "^20.12.7",
+    "tsx": "^4.9.3",
+    "typescript": "^5.4.5"
+  }
+}

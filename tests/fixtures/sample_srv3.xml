@@ -1,0 +1,15 @@
+<timedtext format="3">
+  <body>
+    <p t="0" d="2000">
+      <s>Hello</s>
+      <s>world</s>
+    </p>
+    <p t="2000" d="2000">
+      <s>This</s>
+      <s>is</s>
+      <s>srv3</s>
+      <s>caption</s>
+      <s>text.</s>
+    </p>
+  </body>
+</timedtext>
