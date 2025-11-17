@@ -32,6 +32,7 @@ python -m pip install -r requirements.txt
 Create a `.env` file in the project root with the following content:
 
 ```env
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 API_KEYS=your_api_key1,your_api_key2
 USER_AGENTS=agent1,agent2
 LANG=ru
