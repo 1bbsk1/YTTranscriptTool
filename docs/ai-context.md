@@ -22,5 +22,5 @@
 - Baselines stored under `tests/fixtures/python_baseline/` (sample per-video + combined exports).
 
 ## Docs/Status
-- Migration notes and plan: `docs/js-port.md`, `js_port_plan.md` (all tasks marked complete).
-- README updated for TS usage; Makefile notes Python path is legacy. Python scripts kept but not primary.
+- Migration notes and plan: `docs/js-port.md`, `docs/js_port_plan.md` (all tasks marked complete).
+- README updated for TS usage; Makefile notes Python path is legacy. Python scripts kept in `legacy/python/` but not primary.
