@@ -7,10 +7,10 @@ lint:
 	@$(PYTHON) -m ruff check .
 
 test:
-	@echo "[test] No tests configured yet. Add pytest or similar when ready."
+	@echo "[test] Python tests not configured. Use npm test for TS suite."
 
 typecheck:
-	@echo "[typecheck] No type checker configured yet. Add mypy/pyright when ready."
+	@echo "[typecheck] No Python type checker configured. Use npm run lint for TS type checks."
 
 format:
 	@echo "[format] No formatter configured yet. Add black/isort when ready."

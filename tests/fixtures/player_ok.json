@@ -1,0 +1,18 @@
+{
+  "videoDetails": {
+    "title": "Test title",
+    "viewCount": "123",
+    "lengthSeconds": "456"
+  },
+  "captions": {
+    "playerCaptionsTracklistRenderer": {
+      "captionTracks": [
+        {
+          "baseUrl": "https://example.com/captions",
+          "languageCode": "ru",
+          "kind": "asr"
+        }
+      ]
+    }
+  }
+}

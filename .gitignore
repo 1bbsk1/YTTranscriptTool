@@ -18,10 +18,15 @@ DevOops_conf.json
 __pycache__/
 *.pyc
 .DS_Store
+npm-debug.log*
 
 # 🐍 Виртуальные окружения
 venv/
 .venv/
+
+# 🟦 Node.js артефакты
+node_modules/
+dist/
 
 # 📝 Local planning
 tasks.json
