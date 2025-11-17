@@ -3,7 +3,6 @@
 import json
 import sys
 from pathlib import Path
-from datetime import datetime
 
 DB_PATH = Path("video_db.json")
 

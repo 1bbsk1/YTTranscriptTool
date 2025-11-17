@@ -1,7 +1,10 @@
+PYTHON ?= python
+
 .PHONY: lint test typecheck format
 
 lint:
-	@echo "[lint] No linter configured yet. Add ruff/flake8 when ready."
+	@echo "[lint] Running ruff..."
+	@$(PYTHON) -m ruff check .
 
 test:
 	@echo "[test] No tests configured yet. Add pytest or similar when ready."

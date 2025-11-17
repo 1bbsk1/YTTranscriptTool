@@ -1,12 +1,13 @@
 # batch_fetch.py
 
-import subprocess
-import time
-import random
-from datetime import datetime
-from pathlib import Path
 import json
 import os
+import random
+import subprocess
+import time
+from datetime import datetime
+from pathlib import Path
+
 from dotenv import load_dotenv
 
 # === Загрузка .env ===
@@ -42,7 +43,7 @@ def is_valid(entry):
             data.get("text"),
             isinstance(data.get("views"), int) and data["views"] > 0
         ])
-    except:
+    except Exception:
         return False
 
 # === Основной цикл ===
