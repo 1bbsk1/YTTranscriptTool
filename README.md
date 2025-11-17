@@ -19,8 +19,13 @@ A tool for bulk downloading auto-generated subtitles (ASR) from YouTube — incl
 ## 🛠 Requirements
 
 ```bash
-pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 ```
+
+> Keep using the `python` inside `.venv` in your terminal session (reactivate with `source .venv/bin/activate` if you open a new shell).
+> If you already had a `venv/` folder that was created elsewhere, remove it and recreate the env as shown above so `python` is available.
 
 ## ⚙️ .env Example
 
