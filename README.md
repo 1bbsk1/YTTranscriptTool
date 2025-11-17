@@ -60,6 +60,14 @@ Export combined JSON files by channel:
 python export_combined_json.py
 ```
 
+## 🧰 Development
+
+Run static analysis (Ruff, aiogram-based bot code uses this environment):
+
+```bash
+make lint
+```
+
 ## 📁 Output Format
 
 Each resulting JSON contains:

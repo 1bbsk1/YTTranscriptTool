@@ -1,15 +1,15 @@
 # fetch_subs.py
 
-import requests
-import xml.etree.ElementTree as ET
-import sys
-import random
-import time
 import json
 import os
+import random
+import sys
+import time
+import xml.etree.ElementTree as ET
 from pathlib import Path
+
+import requests
 from dotenv import load_dotenv
-from datetime import datetime
 
 # Загрузка ключей и параметров
 load_dotenv()
@@ -76,7 +76,7 @@ def extract_caption_url(data, lang="ru"):
                 return track["baseUrl"]
         raise ValueError("NO_SUBTITLES")
     except KeyError:
-        raise ValueError("NO_SUBTITLES")
+        raise ValueError("NO_SUBTITLES") from None
 
 def download_subs_text(url):
     url += "&fmt=srv3"
