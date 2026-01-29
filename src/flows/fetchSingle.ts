@@ -15,6 +15,7 @@ export type VideoRecord = {
   duration: number;
   published: string;
   text: string;
+  captions_lang: string;
 };
 
 type FetchAndSaveOpts = {
@@ -28,7 +29,7 @@ type FetchAndSaveOpts = {
 };
 
 type FetchOutcome =
-  | { status: "success"; path: string }
+  | { status: "success"; path: string; lang: string }
   | { status: "no_subs"; path?: string }
   | { status: "error"; error: string };
 
@@ -40,7 +41,13 @@ const extractPublishedDate = (data: any): string => {
   }
 };
 
-const buildResult = (videoId: string, channel: string, data: any, text: string): VideoRecord => {
+const buildResult = (
+  videoId: string,
+  channel: string,
+  data: any,
+  text: string,
+  captionsLang: string
+): VideoRecord => {
   const details = data?.videoDetails ?? {};
   return {
     video_id: videoId,
@@ -49,7 +56,8 @@ const buildResult = (videoId: string, channel: string, data: any, text: string):
     views: Number(details.viewCount ?? 0),
     duration: Number(details.lengthSeconds ?? 0),
     published: extractPublishedDate(data),
-    text
+    text,
+    captions_lang: captionsLang
   };
 };
 
@@ -88,17 +96,17 @@ export const fetchSubsAndSave = async (opts: FetchAndSaveOpts): Promise<FetchOut
   try {
     logger.info("Fetching video data...", { videoId, lang });
     const playerData = await playerFetcher({ videoId, lang });
-    const captionUrl = extractCaptionUrl(playerData as any, lang);
+    const captionTrack = extractCaptionUrl(playerData as any, lang);
 
     logger.info("Downloading captions...");
-    const text = await captionsFetcher(captionUrl);
-    const result = buildResult(videoId, channel, playerData, text);
+    const text = await captionsFetcher(captionTrack.baseUrl);
+    const result = buildResult(videoId, channel, playerData, text, captionTrack.languageCode);
 
     await ensureDir(outDir);
     await writeJson(outPath, result);
-    logger.info(`Saved transcript`, { outPath });
+    logger.info(`Saved transcript`, { outPath, captionsLang: captionTrack.languageCode });
 
-    return { status: "success", path: outPath };
+    return { status: "success", path: outPath, lang: captionTrack.languageCode };
   } catch (error) {
     if (error instanceof NoSubtitlesError) {
       logger.warn("No auto subtitles available");

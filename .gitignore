@@ -8,6 +8,10 @@ video_data.zip
 video_db.json
 HighLoadChannel.json
 DevOops_conf.json
+finopsfoundation.json
+finopsfoundation.txt
+video_db.full.json
+tmp_inspect.ts
 
 # 📤 Экспорт и промежуточные форматы
 *.log

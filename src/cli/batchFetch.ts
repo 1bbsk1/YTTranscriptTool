@@ -16,6 +16,7 @@ type DbEntry = {
   tries: number;
   last_attempt: string | null;
   error: string | null;
+  captions_lang?: string | null;
 };
 
 const DB_PATH = "video_db.json";
@@ -98,6 +99,7 @@ export const main = async () => {
       logger.info(`Success`, { channel, videoId });
       entry.status = "success";
       entry.error = null;
+      entry.captions_lang = outcome.lang;
       errorStreak = 0;
     } else if (outcome.status === "no_subs") {
       logger.warn(`No subtitles`, { channel, videoId });
