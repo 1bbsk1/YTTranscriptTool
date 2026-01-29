@@ -1,6 +1,6 @@
-# TRANSCRIPT_TOOL
+# TRANSCRIPT_TOOL (yt-intel)
 
-Single-source context for the YouTube Transcript Tool: stack, commands, config, data locations, completed work, and open tasks.
+Single-source context for yt-intel: stack, commands, config, data locations, completed work, and open tasks.
 
 ## Stack & Commands
 - TypeScript (NodeNext ESM) with `tsx`; lint via `npm run lint` (tsc --noEmit); tests via `npm test` (unit + CLI + e2e).

@@ -1,4 +1,4 @@
-# YouTube Transcript Parser
+# yt-intel — YouTube transcript fetcher
 
 A tool for bulk downloading auto-generated subtitles (ASR) from YouTube — including videos where standard tools like `yt-dlp` or `youtube-transcript-api` fail.
 

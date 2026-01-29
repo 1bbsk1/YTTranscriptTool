@@ -1,5 +1,5 @@
 {
-  "name": "yt-transcript-tool",
+  "name": "yt-intel",
   "version": "0.1.0",
   "private": true,
   "description": "YouTube transcript fetcher and summarizer (TypeScript port).",

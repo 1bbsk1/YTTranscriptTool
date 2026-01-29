@@ -1,4 +1,4 @@
-# AI Context Brief (YTTranscriptTool)
+# AI Context Brief (yt-intel)
 
 ## Stack & commands
 - TypeScript (NodeNext ESM) with tsx; lint via `npm run lint` (tsc --noEmit); tests via `npm test` (unit + CLI + e2e).
